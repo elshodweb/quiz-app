@@ -2,13 +2,27 @@
 
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
+import type { TelegramWebApp } from "../types/telegram";
 
 const TelegramWebApp = () => {
   useEffect(() => {
-    // Only import and initialize WebApp on the client side
     const initWebApp = async () => {
-      const { WebApp } = await import("@twa-dev/sdk");
-      WebApp.ready();
+      try {
+        if (typeof window !== "undefined") {
+          if (window.Telegram?.WebApp) {
+            window.Telegram.WebApp.ready();
+          } else {
+            // Import the SDK and initialize it
+            const sdk = await import("@twa-dev/sdk");
+            // Access the WebApp object from the window after SDK initialization
+            if (window.Telegram?.WebApp) {
+              window.Telegram.WebApp.ready();
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Failed to initialize Telegram Web App:", error);
+      }
     };
 
     initWebApp();
