@@ -48,8 +48,9 @@ export default function Results({ userInfo, score, onRestart }: Props) {
               {userInfo.fullName}
             </p>
             <p className="text-sm">
-              <span className="text-[#00A19B]">Telefon raqam: </span>
-              {userInfo.phone}
+              <span className="text-[#00A19B]">Telefon raqami: </span>
+              +998 ({userInfo.phone.slice(0, 2)}) {userInfo.phone.slice(2, 5)}{" "}
+              {userInfo.phone.slice(5, 7)} {userInfo.phone.slice(7, 9)}
             </p>
             <p className="text-sm">
               <span className="text-[#00A19B]">Maktab: </span>

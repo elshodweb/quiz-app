@@ -60,16 +60,35 @@ export default function RegistrationForm({ onSubmit }: Props) {
               <label className="block text-sm text-[#00A19B]">
                 Telefon raqamingiz
               </label>
-              <input
-                type="tel"
-                value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
-                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
-                placeholder="Telefon raqamingiz"
-                required
-              />
+              <div className="relative">
+                <input
+                  type="tel"
+                  value={
+                    formData.phone
+                      ? `+998 (${formData.phone.slice(0, 2)})${
+                          formData.phone.length > 2 ? " " : ""
+                        }${formData.phone.slice(2, 5)}${
+                          formData.phone.length > 5 ? " " : ""
+                        }${formData.phone.slice(5, 7)}${
+                          formData.phone.length > 7 ? " " : ""
+                        }${formData.phone.slice(7, 9)}`.replace(/[()-\s]*$/, "")
+                      : ""
+                  }
+                  onChange={(e) => {
+                    // Remove all non-digits
+                    let value = e.target.value.replace(/\D/g, "");
+                    // Remove 998 prefix if entered
+                    value = value.replace(/^998/, "");
+                    // Limit to 9 digits
+                    value = value.slice(0, 9);
+                    setFormData({ ...formData, phone: value });
+                  }}
+                  className="w-full p-2 border border-[#9747FF] border-opacity-20 rounded-lg focus:outline-none focus:border-[#9747FF]"
+                  placeholder="+998 (90) 123 45 67"
+                  required
+                  
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
