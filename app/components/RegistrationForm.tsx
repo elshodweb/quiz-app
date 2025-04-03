@@ -2,101 +2,181 @@
 
 import { useState } from "react";
 import { UserInfo } from "../types";
+import Image from "next/image";
 
 interface Props {
   onSubmit: (data: UserInfo) => void;
 }
 
 export default function RegistrationForm({ onSubmit }: Props) {
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<UserInfo>({
     fullName: "",
     phone: "",
+    school: "",
     grade: "",
     language: "",
+    termsAccepted: false,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    if (step === 1) {
+      setStep(2);
+    } else {
+      onSubmit(formData);
+    }
   };
 
   return (
     <div className="p-4 max-w-md mx-auto">
-      <h1 className="text-center text-xl text-purple-600 mb-6">
-        Ro'yxatdan o'tish
+      <div className="flex justify-between items-center mb-8">
+        <Image src="/logo.png" alt="School Logo" width={48} height={48} />
+        <Image src="/logo-2.png" alt="App Logo" width={48} height={48} />
+      </div>
+
+      <h1 className="text-center text-xl text-[#00A19B] mb-6">
+        {step === 1 ? "Ro'yxatdan o'tish" : ""}
       </h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <label className="block text-sm text-purple-600">F.I.SH</label>
-          <input
-            type="text"
-            value={formData.fullName}
-            onChange={(e) =>
-              setFormData({ ...formData, fullName: e.target.value })
-            }
-            className="w-full p-2 border border-purple-200 rounded-lg focus:outline-none focus:border-purple-500"
-            placeholder="F.I.SH"
-            required
-          />
-        </div>
+        {step === 1 ? (
+          <>
+            <div className="space-y-2">
+              <label className="block text-sm text-[#00A19B]">F.I.SH</label>
+              <input
+                type="text"
+                value={formData.fullName}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullName: e.target.value })
+                }
+                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
+                placeholder="F.I.SH"
+                required
+              />
+            </div>
 
-        <div className="space-y-2">
-          <label className="block text-sm text-purple-600">
-            Telefon raqamingiz
-          </label>
-          <input
-            type="tel"
-            value={formData.phone}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
-            className="w-full p-2 border border-purple-200 rounded-lg focus:outline-none focus:border-purple-500"
-            placeholder="+998 99 999 99 99"
-            required
-          />
-        </div>
+            <div className="space-y-2">
+              <label className="block text-sm text-[#00A19B]">
+                Telefon raqamingiz
+              </label>
+              <input
+                type="tel"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
+                placeholder="Telefon raqamingiz"
+                required
+              />
+            </div>
 
-        <div className="space-y-2">
-          <label className="block text-sm text-purple-600">Sinf</label>
-          <select
-            value={formData.grade}
-            onChange={(e) =>
-              setFormData({ ...formData, grade: e.target.value })
-            }
-            className="w-full p-2 border border-purple-200 rounded-lg focus:outline-none focus:border-purple-500"
-            required
+            <div className="space-y-2">
+              <label className="block text-sm text-[#00A19B]">
+                Maktabni tanlang
+              </label>
+              <select
+                value={formData.school}
+                onChange={(e) =>
+                  setFormData({ ...formData, school: e.target.value })
+                }
+                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
+                required
+              >
+                <option value="">Maktabni tanlang</option>
+                <option value="1">1-maktab</option>
+                <option value="2">2-maktab</option>
+                <option value="3">3-maktab</option>
+              </select>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="space-y-2">
+              <label className="block text-sm text-[#00A19B]">
+                Sinfni tanlang
+              </label>
+              <select
+                value={formData.grade}
+                onChange={(e) =>
+                  setFormData({ ...formData, grade: e.target.value })
+                }
+                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
+                required
+              >
+                <option value="">Sinfni tanlang</option>
+                <option value="5">5-sinf</option>
+                <option value="6">6-sinf</option>
+                <option value="7">7-sinf</option>
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-sm text-[#00A19B]">
+                Tilni tanlang
+              </label>
+              <select
+                value={formData.language}
+                onChange={(e) =>
+                  setFormData({ ...formData, language: e.target.value })
+                }
+                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
+                required
+              >
+                <option value="">Tilni tanlang</option>
+                <option value="uz">O'zbekcha</option>
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+
+            <div className="mt-6 p-4 bg-[#00A19B] bg-opacity-10 rounded-lg">
+              <p className="text-[#00A19B] text-sm mb-4">
+                Lorem ipsum dolor sit amet consectetur. Donec auctor ut ante
+                proin. Vitae vulputate aliquam blandit varius ut hendrerit nec
+                semper at.
+              </p>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={formData.termsAccepted}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      termsAccepted: e.target.checked,
+                    })
+                  }
+                  className="w-4 h-4 text-[#00A19B]"
+                  required
+                />
+                <span className="text-sm text-[#00A19B]">
+                  Lorem ipsum dolor sit amet
+                </span>
+              </label>
+            </div>
+          </>
+        )}
+
+        <div className="flex gap-4">
+          {step === 2 && (
+            <button
+              type="button"
+              onClick={() => setStep(1)}
+              className="w-1/2 py-3 bg-gray-200 text-gray-700 rounded-lg transition-colors"
+            >
+              Назад
+            </button>
+          )}
+          <button
+            type="submit"
+            className={`py-3 bg-[#00A19B] text-white rounded-lg transition-colors ${
+              step === 2 ? "w-1/2" : "w-full"
+            }`}
           >
-            <option value="">Sinfni tanlang</option>
-            <option value="5">5 sinf</option>
-            <option value="6">6 sinf</option>
-            <option value="7">7 sinf</option>
-          </select>
+            {step === 1 ? "Davom etish" : "Далее"}
+          </button>
         </div>
-
-        <div className="space-y-2">
-          <label className="block text-sm text-purple-600">Til</label>
-          <select
-            value={formData.language}
-            onChange={(e) =>
-              setFormData({ ...formData, language: e.target.value })
-            }
-            className="w-full p-2 border border-purple-200 rounded-lg focus:outline-none focus:border-purple-500"
-            required
-          >
-            <option value="">Tilni tanlang</option>
-            <option value="uz">O'zbekcha</option>
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-purple-500 text-white py-3 rounded-lg hover:bg-purple-600 transition-colors"
-        >
-          Davom etish
-        </button>
       </form>
     </div>
   );

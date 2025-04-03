@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Question } from "../types";
+import Image from "next/image";
 
 interface Props {
   questions: Question[];
@@ -63,16 +64,26 @@ export default function Quiz({ questions, onComplete }: Props) {
 
   return (
     <div className="p-4 max-w-md mx-auto">
-      <div className="bg-purple-100 p-4 rounded-lg mb-4">
+      <div className="mb-4 rounded-lg overflow-hidden">
+        <Image
+          src="/ads/ad.png"
+          alt="Advertisement"
+          width={800}
+          height={200}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+      <div className="bg-[#00A19B] bg-opacity-10 p-4 rounded-lg mb-4">
         <div className="flex justify-between items-center">
           <div
             className={`px-4 py-1 rounded ${
-              timeLeft <= 300 ? "bg-red-500" : "bg-purple-500"
+              timeLeft <= 300 ? "bg-red-500" : "bg-[#00A19B]"
             } text-white`}
           >
             {formatTime(timeLeft)}
           </div>
-          <div className="text-purple-600">
+          <div className="text-[#00A19B]">
             {currentQuestion + 1}/{questions.length}
           </div>
         </div>
@@ -88,7 +99,7 @@ export default function Quiz({ questions, onComplete }: Props) {
               className={`flex items-center space-x-3 p-3 border rounded-lg cursor-pointer 
                 ${
                   selectedAnswers[currentQuestion] === index
-                    ? "bg-purple-50 border-purple-300"
+                    ? "bg-[#00A19B] bg-opacity-10 border-[#00A19B]"
                     : "hover:bg-gray-50"
                 }
                 ${isTimeUp ? "cursor-not-allowed opacity-60" : ""}`}
@@ -99,7 +110,7 @@ export default function Quiz({ questions, onComplete }: Props) {
                 checked={selectedAnswers[currentQuestion] === index}
                 onChange={() => handleAnswer(index)}
                 disabled={isTimeUp}
-                className="w-4 h-4 text-purple-600"
+                className="w-4 h-4 text-[#00A19B]"
               />
               <span className="text-gray-700">{option}</span>
             </label>
@@ -107,7 +118,7 @@ export default function Quiz({ questions, onComplete }: Props) {
         </div>
       </div>
 
-      <div className="flex justify-between gap-4">
+      <div className="flex gap-4">
         <button
           onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}
           disabled={currentQuestion === 0 || isTimeUp}
@@ -118,7 +129,7 @@ export default function Quiz({ questions, onComplete }: Props) {
         <button
           onClick={handleNext}
           disabled={selectedAnswers[currentQuestion] === undefined || isTimeUp}
-          className="w-1/2 py-3 bg-purple-500 text-white rounded-lg disabled:opacity-50"
+          className="w-1/2 py-3 bg-[#00A19B] text-white rounded-lg disabled:opacity-50"
         >
           {currentQuestion === questions.length - 1 ? "Завершить" : "Далее"}
         </button>
@@ -129,7 +140,7 @@ export default function Quiz({ questions, onComplete }: Props) {
           <div className="bg-white p-6 rounded-lg text-center">
             <h2 className="text-xl font-bold mb-4">Время вышло!</h2>
             <p className="mb-4">Ваш тест был автоматически завершен</p>
-            <p className="text-purple-600">
+            <p className="text-[#00A19B]">
               Результат: {calculateScore()} из {questions.length}
             </p>
           </div>
