@@ -86,7 +86,6 @@ export default function RegistrationForm({ onSubmit }: Props) {
                   className="w-full p-2 border border-[#9747FF] border-opacity-20 rounded-lg focus:outline-none focus:border-[#9747FF]"
                   placeholder="+998 (90) 123 45 67"
                   required
-                  
                 />
               </div>
             </div>
@@ -182,16 +181,14 @@ export default function RegistrationForm({ onSubmit }: Props) {
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="w-1/2 py-3 bg-gray-200 text-gray-700 rounded-lg transition-colors"
+              className="w-1/2 py-3 gradient-btn"
             >
               Назад
             </button>
           )}
           <button
             type="submit"
-            className={`py-3 bg-[#00A19B] text-white rounded-lg transition-colors ${
-              step === 2 ? "w-1/2" : "w-full"
-            }`}
+            className={`py-3 gradient-btn ${step === 2 ? "w-1/2" : "w-full"}`}
           >
             {step === 1 ? "Davom etish" : "Далее"}
           </button>

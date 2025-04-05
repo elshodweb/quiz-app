@@ -122,14 +122,14 @@ export default function Quiz({ questions, onComplete }: Props) {
         <button
           onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}
           disabled={currentQuestion === 0 || isTimeUp}
-          className="w-1/2 py-3 bg-gray-200 text-gray-700 rounded-lg disabled:opacity-50"
+          className="w-1/2 py-3 gradient-btn disabled:opacity-50"
         >
           Назад
         </button>
         <button
           onClick={handleNext}
           disabled={selectedAnswers[currentQuestion] === undefined || isTimeUp}
-          className="w-1/2 py-3 bg-[#00A19B] text-white rounded-lg disabled:opacity-50"
+          className="w-1/2 py-3 gradient-btn disabled:opacity-50"
         >
           {currentQuestion === questions.length - 1 ? "Завершить" : "Далее"}
         </button>

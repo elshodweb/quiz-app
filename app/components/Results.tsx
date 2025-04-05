@@ -84,10 +84,7 @@ export default function Results({ userInfo, score, onRestart }: Props) {
         </div>
       </div>
       {/* Action button */}
-      <button
-        onClick={onRestart}
-        className="w-full py-3 bg-[#00A19B] text-white rounded-lg transition-colors"
-      >
+      <button onClick={onRestart} className="w-full py-3 gradient-btn">
         Chegirmani qo'lga kiritish
       </button>
     </div>
