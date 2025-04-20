@@ -83,6 +83,29 @@ export default function Results({ userInfo, score, onRestart }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Sponsor Instagram Links */}
+      <div className="flex justify-center gap-8 mt-6 mb-4">
+        <a
+          href="https://www.instagram.com/premium_school_uzbekistan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center text-[#00A19B] font-bold text-sm hover:underline"
+        >
+          <img src="/instagram.svg" alt="Instagram" className="w-8 h-8 mr-2" />
+          Premium School Uzbekistan
+        </a>
+        <a
+          href="https://www.instagram.com/ajou_uz?igsh=MXhvcmMya3AzY21vMQ=="
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center text-[#00A19B] font-bold text-sm hover:underline"
+        >
+          <img src="/instagram.svg" alt="Instagram" className="w-8 h-8 mr-2" />
+          Ajou Uzbekistan
+        </a>
+      </div>
+
       {/* Action button */}
       <button onClick={onRestart} className="w-full py-3 gradient-btn">
         Chegirmani qo'lga kiritish
