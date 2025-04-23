@@ -2,6 +2,7 @@
 
 import { UserInfo } from "../types";
 import Image from "next/image";
+import Header from "./Header";
 
 interface Props {
   userInfo: UserInfo;
@@ -17,10 +18,7 @@ export default function Results({ userInfo, score, onRestart }: Props) {
   return (
     <div className="p-4 max-w-md mx-auto">
       {/* Top logos */}
-      <div className="flex justify-between items-center mb-8">
-        <Image src="/logo.png" alt="School Logo" width={48} height={48} />
-        <Image src="/logo-2.png" alt="App Logo" width={48} height={48} />
-      </div>
+      <Header />
 
       {/* Celebration image and text */}
       <div className="text-center mb-6">

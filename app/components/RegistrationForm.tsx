@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { UserInfo } from "../types";
 import Image from "next/image";
+import Header from "./Header";
 
 interface Props {
   onSubmit: (data: UserInfo) => void;
@@ -30,10 +31,7 @@ export default function RegistrationForm({ onSubmit }: Props) {
 
   return (
     <div className="p-4 max-w-md mx-auto">
-      <div className="flex justify-between items-center mb-8">
-        <Image src="/logo.png" alt="School Logo" width={48} height={48} />
-        <Image src="/logo-2.png" alt="App Logo" width={48} height={48} />
-      </div>
+      <Header />
 
       <h1 className="text-center text-xl text-[#00A19B] mb-6">
         {step === 1 ? "Ro'yxatdan o'tish" : ""}
