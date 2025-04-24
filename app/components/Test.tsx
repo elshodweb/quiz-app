@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { UserInfo } from "../types";
 import Header from "./Header";
 import Results from "./Results";
+import "katex/dist/katex.min.css";
+import { InlineMath, BlockMath } from "react-katex";
 
 interface Question {
   question: string;
@@ -34,6 +36,19 @@ export default function Test({ userInfo }: TestProps) {
 
   const getOptionLabel = (index: number) => {
     return String.fromCharCode(65 + index); // A, B, C, D...
+  };
+
+  const renderMathText = (text: string) => {
+    // Check if the text contains LaTeX delimiters
+    if (text.includes("\\")) {
+      try {
+        return <BlockMath math={text} />;
+      } catch (error) {
+        console.error("Error rendering math:", error);
+        return text;
+      }
+    }
+    return text;
   };
 
   useEffect(() => {
@@ -236,7 +251,9 @@ export default function Test({ userInfo }: TestProps) {
             </span>
           </div>
 
-          <h2 className="text-xl mb-6">{currentQ.question}</h2>
+          <div className="text-xl mb-6">
+            {renderMathText(currentQ.question)}
+          </div>
 
           <div className="space-y-3">
             {currentQ.options.map((option, index) => (
@@ -252,7 +269,7 @@ export default function Test({ userInfo }: TestProps) {
                 <span className="font-medium text-[#00A19B] mr-2">
                   {getOptionLabel(index)})
                 </span>
-                {option}
+                {renderMathText(option)}
               </button>
             ))}
           </div>

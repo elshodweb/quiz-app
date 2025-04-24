@@ -12,15 +12,18 @@
   "dependencies": {
     "@twa-dev/sdk": "^6.9.1",
     "chart.js": "^4.4.9",
+    "katex": "^0.16.22",
     "next": "14.1.0",
     "react": "^18",
     "react-chartjs-2": "^5.3.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-katex": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-katex": "^3.0.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",

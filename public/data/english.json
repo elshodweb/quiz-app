@@ -21,7 +21,7 @@
   },
   {
     "question": "My brother is ___ artist.",
-    "options": ["the", "an", "a", ""],
+    "options": ["the", "an", "a", " "],
     "answerIndex": 2
   },
   {

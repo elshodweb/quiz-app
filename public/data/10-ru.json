@@ -1,57 +1,112 @@
 [
   {
-    "question": "ax^2 + bx + c = 0 kvadrat tenglamasining diskriminanti qancha?",
-    "options": ["b^2 - 4ac", "4ac - b^2", "2b - 4a", "a^2 + b^2"],
-    "answerIndex": 0
-  },
-  {
-    "question": "Agar log_2(x) = 5, x ning qiymati nima?",
-    "options": ["10", "25", "32", "20"],
-    "answerIndex": 2
-  },
-  {
-    "question": "f(x) = 3x^3 - 5x + 2 funksiyasining hosilasini toping.",
-    "options": ["9x^2 - 5", "3x^2 - 5", "6x^2 - 5", "3x^2 + 5"],
-    "answerIndex": 0
-  },
-  {
-    "question": "Asos uzunligi 10 sm va balandligi 5 sm bo'lgan uchburchakning maydoni qancha?",
-    "options": ["25 sm²", "50 sm²", "20 sm²", "15 sm²"],
-    "answerIndex": 0
-  },
-  {
-    "question": "Agar ikki vektor orasidagi skalyar ko'paytma 0 bo'lsa, ularning o'rtasidagi burchak qancha?",
-    "options": ["0°", "90°", "180°", "45°"],
+    "question": "Какое значение имеет предел $\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$?",
+    "options": ["0", "1", "∞", "Не существует"],
     "answerIndex": 1
   },
   {
-    "question": "Tenglamani yeching: 2(x−3)=4(x+1).",
-    "options": ["-1", "1", "2", "0"],
+    "question": "Какой из следующих углов является углом между двумя векторами $\\vec{a}$ и $\\vec{b}$, если $\\vec{a} \\cdot \\vec{b} = |\\vec{a}| |\\vec{b}|$?",
+    "options": ["0°", "90°", "180°", "45°"],
     "answerIndex": 0
   },
   {
-    "question": "Quyidagi grafiklardan qaysi biri y = -x^2 + 4 funksiyasiga to'g'ri keladi?",
+    "question": "Найдите значение определенного интеграла $\\int_{0}^{1} (4x^3 - 2x^2 + 1) dx$",
+    "options": ["$\\frac{1}{2}$", "1", "$\\frac{5}{12}$", "$\\frac{7}{12}$"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Чему равен корень из $x^2 + 4x + 4$?",
+    "options": ["$x + 2$", "$|x + 2|$", "$(x + 2)^2$", "$x^2 + 2$"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Найдите значение $\\cos(45°)$",
     "options": [
-      "Yuqoriga ochilgan",
-      "Pastga ochilgan",
-      "To'g'ri chiziq",
-      "Parabola"
+      "$\\frac{1}{2}$",
+      "$\\frac{\\sqrt{2}}{2}$",
+      "$\\frac{3}{4}$",
+      "1"
     ],
     "answerIndex": 1
   },
   {
-    "question": "f(x) = -2x^2 + 8x - 3 funksiyasining eng katta qiymatini toping.",
-    "options": ["7", "8", "9", "10"],
+    "question": "Решите уравнение: $3(x - 1) + 2 = 5x - 4$",
+    "options": ["3", "1", "2", "0"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Какое значение имеет производная функции $f(x) = x^3 - 6x^2 + 9x$?",
+    "options": [
+      "$3x^2 - 12x + 9$",
+      "$x^2 - 6x + 9$",
+      "$3x^2 - 6$",
+      "$2x^2 - 6x + 9$"
+    ],
     "answerIndex": 0
   },
   {
-    "question": "x^2 - 4 = 0 tenglamasining qaysi ko'paytuvchisi ildiz?",
-    "options": ["2", "3", "-2", "A va C"],
-    "answerIndex": 3
+    "question": "Найдите площадь круга радиусом 3 см",
+    "options": ["$9\\pi$", "$6\\pi$", "$12\\pi$", "$3\\pi$"],
+    "answerIndex": 0
   },
   {
-    "question": "Agar f(x) = 2x + 3 bo'lsa, f(-1) ning qiymati qancha?",
-    "options": ["1", "0", "-1", "-5"],
+    "question": "Чему равен логарифм $\\log_{10}(100)$?",
+    "options": ["1", "2", "10", "100"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Какое из следующих выражений является эквивалентом $(x + 3)^2$?",
+    "options": ["$x^2 + 6x + 9$", "$x^2 + 3x + 9$", "$x^2 + 9$", "$x^2 + 3$"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Найдите производную функции $f(x) = x^2 + 3x + 2$",
+    "options": ["$2x + 3$", "$x^2 + 3$", "$2x + 2$", "$x + 3$"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Решите уравнение $\\frac{1}{x} = 2$",
+    "options": [
+      "$x = 2$",
+      "$x = \\frac{1}{2}$",
+      "$x = -2$",
+      "$x = -\\frac{1}{2}$"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Вычислите $\\int x^2 dx$",
+    "options": [
+      "$\\frac{x^3}{3} + C$",
+      "$x^3 + C$",
+      "$\\frac{x^2}{2} + C$",
+      "$2x + C$"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Найдите значение выражения $\\sqrt{16} + \\sqrt{9}$",
+    "options": ["5", "7", "9", "11"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Решите неравенство $x^2 - 4 > 0$",
+    "options": ["$x < -2$ или $x > 2$", "$-2 < x < 2$", "$x > 2$", "$x < 2$"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Найдите сумму бесконечной геометрической прогрессии $1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + ...$",
+    "options": ["1", "2", "∞", "0"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Вычислите $\\sin(\\frac{\\pi}{2})$",
+    "options": ["0", "1", "$\\frac{1}{2}$", "$\\frac{\\sqrt{2}}{2}$"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Найдите область определения функции $f(x) = \\frac{1}{x-2}$",
+    "options": ["$x \\neq 2$", "$x > 2$", "$x < 2$", "$x \\geq 2$"],
     "answerIndex": 0
   }
 ]

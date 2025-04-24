@@ -136,9 +136,9 @@ export default function RegistrationForm({ onSubmit }: Props) {
 
             <div className="mt-6 p-4 bg-[#00A19B] bg-opacity-10 rounded-lg">
               <p className="text-[#00A19B] text-sm mb-4">
-                Lorem ipsum dolor sit amet consectetur. Donec auctor ut ante
-                proin. Vitae vulputate aliquam blandit varius ut hendrerit nec
-                semper at.
+                {formData.language === "ru"
+                  ? "Я подтверждаю, что ввожу свои данные правильно и что результаты теста будут моими собственными. Использование других источников во время теста запрещено."
+                  : "Men o'z ma'lumotlarimni to'g'ri kiritganimni va test natijalarimni o'zimning ekanligini tasdiqlayman. Test davomida boshqa manbalardan foydalanish taqiqlanadi."}
               </p>
               <label className="flex items-center space-x-2">
                 <input
@@ -154,7 +154,9 @@ export default function RegistrationForm({ onSubmit }: Props) {
                   required
                 />
                 <span className="text-sm text-[#00A19B]">
-                  Lorem ipsum dolor sit amet
+                  {formData.language === "ru"
+                    ? "Я согласен с условиями"
+                    : "Men shartlarga roziman"}
                 </span>
               </label>
             </div>
@@ -168,14 +170,14 @@ export default function RegistrationForm({ onSubmit }: Props) {
               onClick={() => setStep(1)}
               className="w-1/2 py-3 gradient-btn"
             >
-              Назад
+              Orqaga
             </button>
           )}
           <button
             type="submit"
             className={`py-3 gradient-btn ${step === 2 ? "w-1/2" : "w-full"}`}
           >
-            {step === 1 ? "Davom etish" : "Далее"}
+            {step === 1 ? "Davom etish" : "Boshlash"}
           </button>
         </div>
       </form>
