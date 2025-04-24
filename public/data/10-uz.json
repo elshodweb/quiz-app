@@ -1,0 +1,52 @@
+[
+  {
+    "question": "lim_{x \\to 0} \\frac{\\sin(x)}{x} chegarasining qiymati nima?",
+    "options": ["0", "1", "∞", "Yo'q"],
+    "answerIndex": 1
+  },
+  {
+    "question": "a va b vektorlarining o'rtasidagi burchak qaysi, agar a⋅b = |a| |b|?",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Belgilanagan integralning qiymatini toping: ∫_{0}^{1} (4x^3 - 2x^2 + 1) dx.",
+    "options": ["1/2", "1", "5/12", "7/12"],
+    "answerIndex": 3
+  },
+  {
+    "question": "x^2 + 4x + 4 ifodasining ildizini toping.",
+    "options": ["x + 2", "|x + 2|", "(x + 2)^2", "x^2 + 2x"],
+    "answerIndex": 1
+  },
+  {
+    "question": "cos(45°) ning qiymati nima?",
+    "options": ["1/2", "√2/2", "3/4", "1"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Tenglamani yeching: 3(x−1)+2 = 5x−4.",
+    "options": ["3", "1", "2", "0"],
+    "answerIndex": 1
+  },
+  {
+    "question": "f(x) = x^3 - 6x^2 + 9x funksiyasining hosilasining qiymatini toping.",
+    "options": ["3x^2 - 12x + 9", "x^2 - 6x + 9", "3x^2 - 6", "2x^2 - 6x + 9"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Radiusi 3 sm bo'lgan doiraning maydonini toping.",
+    "options": ["9π sm²", "6π sm²", "12π sm²", "3π sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "log_{10}(100) ning qiymati nima?",
+    "options": ["1", "2", "10", "0"],
+    "answerIndex": 1
+  },
+  {
+    "question": "(x+3)^2 ifodasiga teng bo'lgan qaysi ifoda?",
+    "options": ["x^2 + 6x + 9", "x^2 + 3x + 9", "x^2 + 9", "x^2 + 3x + 3"],
+    "answerIndex": 0
+  }
+]

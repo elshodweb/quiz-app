@@ -4,6 +4,7 @@ import { useState } from "react";
 import { UserInfo } from "../types";
 import Image from "next/image";
 import Header from "./Header";
+import Test from "./Test";
 
 interface Props {
   onSubmit: (data: UserInfo) => void;
@@ -14,11 +15,11 @@ export default function RegistrationForm({ onSubmit }: Props) {
   const [formData, setFormData] = useState<UserInfo>({
     fullName: "",
     phone: "",
-    school: "",
     grade: "",
     language: "",
     termsAccepted: false,
   });
+  const [showTest, setShowTest] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,8 +27,13 @@ export default function RegistrationForm({ onSubmit }: Props) {
       setStep(2);
     } else {
       onSubmit(formData);
+      setShowTest(true);
     }
   };
+
+  if (showTest) {
+    return <Test userInfo={formData} />;
+  }
 
   return (
     <div className="p-4 max-w-md mx-auto">
@@ -73,11 +79,8 @@ export default function RegistrationForm({ onSubmit }: Props) {
                       : ""
                   }
                   onChange={(e) => {
-                    // Remove all non-digits
                     let value = e.target.value.replace(/\D/g, "");
-                    // Remove 998 prefix if entered
                     value = value.replace(/^998/, "");
-                    // Limit to 9 digits
                     value = value.slice(0, 9);
                     setFormData({ ...formData, phone: value });
                   }}
@@ -86,25 +89,6 @@ export default function RegistrationForm({ onSubmit }: Props) {
                   required
                 />
               </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="block text-sm text-[#00A19B]">
-                Maktabni tanlang
-              </label>
-              <select
-                value={formData.school}
-                onChange={(e) =>
-                  setFormData({ ...formData, school: e.target.value })
-                }
-                className="w-full p-2 border border-[#00A19B] border-opacity-20 rounded-lg focus:outline-none focus:border-[#00A19B]"
-                required
-              >
-                <option value="">Maktabni tanlang</option>
-                <option value="1">1-maktab</option>
-                <option value="2">2-maktab</option>
-                <option value="3">3-maktab</option>
-              </select>
             </div>
           </>
         ) : (
@@ -125,6 +109,10 @@ export default function RegistrationForm({ onSubmit }: Props) {
                 <option value="5">5-sinf</option>
                 <option value="6">6-sinf</option>
                 <option value="7">7-sinf</option>
+                <option value="8">8-sinf</option>
+                <option value="9">9-sinf</option>
+                <option value="10">10-sinf</option>
+                <option value="11">11-sinf</option>
               </select>
             </div>
 
@@ -143,7 +131,6 @@ export default function RegistrationForm({ onSubmit }: Props) {
                 <option value="">Tilni tanlang</option>
                 <option value="uz">O'zbekcha</option>
                 <option value="ru">Русский</option>
-                <option value="en">English</option>
               </select>
             </div>
 

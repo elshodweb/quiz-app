@@ -1,0 +1,122 @@
+[
+  {
+    "question": "I ___ from France.",
+    "options": ["is", "are", "am", "be"],
+    "answerIndex": 2
+  },
+  {
+    "question": "This is my friend. ___ name is Peter.",
+    "options": ["Her", "Our", "Yours", "His"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Mike is ___.",
+    "options": [
+      "my sister’s friend",
+      "friend my sister",
+      "friend from my sister",
+      "my sister friend’s"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "My brother is ___ artist.",
+    "options": ["the", "an", "a", ""],
+    "answerIndex": 2
+  },
+  {
+    "question": "___ 20 desks in the classroom.",
+    "options": ["This is", "There is", "They are", "There are"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Paul ___ romantic films.",
+    "options": ["likes not", "don’t like", "doesn’t like", "isn’t likes"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Sorry, I can’t talk. I ___ right now.",
+    "options": ["driving", "’m driving", "drives", "drive"],
+    "answerIndex": 1
+  },
+  {
+    "question": "She ___ at school last week.",
+    "options": ["didn't be", "weren’t", "wasn’t", "isn’t"],
+    "answerIndex": 2
+  },
+  {
+    "question": "I ___ the film last night.",
+    "options": ["like", "likes", "liking", "liked"],
+    "answerIndex": 3
+  },
+  {
+    "question": "___ a piece of cake? No, thank you.",
+    "options": ["Do you like", "Would you like", "Want you", "Are you like"],
+    "answerIndex": 1
+  },
+  {
+    "question": "The living room is ___ than the bedroom.",
+    "options": ["more big", "more bigger", "biggest", "bigger"],
+    "answerIndex": 3
+  },
+  {
+    "question": "The car is very old. We’re going ___ a new car soon.",
+    "options": ["to buy", "buying", "to will buy", "buy"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Jane is a vegetarian. She ___ meat.",
+    "options": ["sometimes eats", "never eats", "often eats", "usually eats"],
+    "answerIndex": 1
+  },
+  {
+    "question": "There aren’t ___ buses late in the evening.",
+    "options": ["some", "any", "no", "a"],
+    "answerIndex": 1
+  },
+  {
+    "question": "The car park is ___ to the restaurant.",
+    "options": ["next", "opposite", "behind", "in front"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Sue ___ shopping every day.",
+    "options": ["is going", "go", "going", "goes"],
+    "answerIndex": 3
+  },
+  {
+    "question": "They ___ in the park when it started to rain heavily.",
+    "options": ["walked", "were walking", "were walk", "are walking"],
+    "answerIndex": 1
+  },
+  {
+    "question": "___ seen fireworks before?",
+    "options": ["Did you ever", "Are you ever", "Have you ever", "Do you ever"],
+    "answerIndex": 2
+  },
+  {
+    "question": "We’ve been friends ___ many years.",
+    "options": ["since", "from", "during", "for"],
+    "answerIndex": 3
+  },
+  {
+    "question": "You ___ pay for the tickets. They’re free.",
+    "options": ["have to", "don’t have", "don’t need to", "doesn’t have to"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Jeff was ill last week and he ___ go out.",
+    "options": ["needn't", "can’t", "mustn’t", "couldn’t"],
+    "answerIndex": 3
+  },
+  {
+    "question": "These are the photos ___ I took on holiday.",
+    "options": ["which", "who", "what", "where"],
+    "answerIndex": 0
+  },
+  {
+    "question": "We’ll stay at home if it ___ this afternoon.",
+    "options": ["raining", "rains", "will rain", "rain"],
+    "answerIndex": 1
+  }
+]

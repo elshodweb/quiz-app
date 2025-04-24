@@ -1,0 +1,52 @@
+[
+  {
+    "question": "5+3×25 + 3 × 25+3×2 ifodasining qiymati nima?",
+    "options": ["11", "16", "8", "10"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar 2x+5=152x + 5 = 152x+5=15 bo'lsa, xxx ning qiymatini toping.",
+    "options": ["5", "10", "7", "8"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Quyidagi burchaklardan qaysi biri to'g'ri?",
+    "options": ["60°", "90°", "120°", "180°"],
+    "answerIndex": 1
+  },
+  {
+    "question": "200 ning qaysi foizi 50 ga teng?",
+    "options": ["25%", "30%", "15%", "10%"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Tomoni 4 sm bo'lgan kvadratning perimetrini toping.",
+    "options": ["12 sm", "16 sm", "20 sm", "8 sm"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Quyidagi tenglamani yeching: 3(x−2)=9.",
+    "options": ["5", "6", "3", "0"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Quyidagi ko'p burchaklardan qaysi biri 6 tomonga ega?",
+    "options": ["Uchburchak", "To'rtburchak", "Parralelogram", "Olti burchak"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Tomoni 3 sm bo'lgan kubning hajmi nima?",
+    "options": ["9 sm³", "27 sm³", "18 sm³", "21 sm³"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Quyidagi raamlardan qaysi biri tub raqam?",
+    "options": ["21", "27", "29", "35"],
+    "answerIndex": 2
+  },
+  {
+    "question": "2x² + 3x − 5 = 0 tenglamasida x² ning koeffitsienti nima?",
+    "options": ["2", "3", "-5", "0"],
+    "answerIndex": 0
+  }
+]

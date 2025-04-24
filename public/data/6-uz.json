@@ -1,0 +1,77 @@
+[
+  {
+    "question": "356 + 472 nechaga teng?",
+    "options": ["828", "842", "848", "862"],
+    "answerIndex": 1
+  },
+  {
+    "question": "963 ni 4 marta kamaytiring.",
+    "options": ["378", "388", "398", "358"],
+    "answerIndex": 0
+  },
+  {
+    "question": "1200 - 899 farqini toping.",
+    "options": ["301", "301", "311", "321"],
+    "answerIndex": 0
+  },
+  {
+    "question": "1200 ni 12 ga bo‘ling.",
+    "options": ["100", "110", "120", "130"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Agar to‘rtburchakning uzunligi 9 sm, kengligi esa 6 sm bo‘lsa, uning yuzasini toping.",
+    "options": ["54 sm²", "56 sm²", "64 sm²", "66 sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "10 sm asos va 8 sm balandlikka ega bo‘lgan uchburchakning yuzasini toping.",
+    "options": ["40 sm²", "35 sm²", "50 sm²", "60 sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "6 tomondan iborat to‘g‘ri ko‘p burchakda nechta burchak bor?",
+    "options": ["6", "7", "8", "9"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar to‘rtburchakning uzunligi 7 sm va kengligi 3 sm bo‘lsa, uning perimetrini toping.",
+    "options": ["10 sm", "20 sm", "18 sm", "22 sm"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Soatning ko‘rsatkichi 3:00 bo‘lsa, qaysi burchak hosil bo‘ladi?",
+    "options": ["60°", "90°", "120°", "150°"],
+    "answerIndex": 1
+  },
+  {
+    "question": "O‘tkir burchakli uchburchakda nechta gradus bor?",
+    "options": ["180°", "90°", "120°", "90° dan kam"],
+    "answerIndex": 3
+  },
+  {
+    "question": "5, 9 va 13 sonlarining o‘rtacha qiymatini toping.",
+    "options": ["8", "9", "10", "11"],
+    "answerIndex": 0
+  },
+  {
+    "question": "12 va 18 sonlarining eng katta umumiy bo‘luvchisi qanday?",
+    "options": ["2", "3", "6", "9"],
+    "answerIndex": 2
+  },
+  {
+    "question": "4 va 6 sonlarining eng kichik umumiy ko‘paytmasi qanday?",
+    "options": ["8", "10", "12", "14"],
+    "answerIndex": 2
+  },
+  {
+    "question": "3 ning kvadratiga ko‘paytirilganda qanday natija bo‘ladi?",
+    "options": ["6", "9", "12", "16"],
+    "answerIndex": 1
+  },
+  {
+    "question": "256 ni 4 ga bo‘lganda qanday natija bo‘ladi?",
+    "options": ["64", "66", "68", "70"],
+    "answerIndex": 0
+  }
+]

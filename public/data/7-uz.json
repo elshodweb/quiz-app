@@ -1,0 +1,77 @@
+[
+  {
+    "question": "567 + 789 qancha bo‘ladi?",
+    "options": ["1356", "1346", "1366", "1376"],
+    "answerIndex": 0
+  },
+  {
+    "question": "900 ni 36 ga bo‘ling.",
+    "options": ["25", "24", "23", "26"],
+    "answerIndex": 1
+  },
+  {
+    "question": "1245 - 987 ni farqini toping.",
+    "options": ["258", "255", "260", "259"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar to‘g‘ri burchakli uchburchakning katetlari 8 sm va 15 sm bo‘lsa, uning yuzini toping.",
+    "options": ["60 sm²", "120 sm²", "70 sm²", "45 sm²"],
+    "answerIndex": 3
+  },
+  {
+    "question": "5, 12, 15, 20 va 30 sonlarining o‘rtacha arifmetik qiymatini toping.",
+    "options": ["16.8", "16.6", "16.4", "16"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Agar aylananing radiusi 10 sm bo‘lsa, uning perimetrini toping. (π ning qiymati 3.14 sifatida foydalaning).",
+    "options": ["31 sm", "63.4 sm", "31.4 sm", "62.8 sm"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Agar kubning tomoni 4 sm bo‘lsa, uning hajmini toping.",
+    "options": ["16 sm³", "48 sm³", "24 sm³", "64 sm³"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Soatning 6:00 vaqtida, soat strelkalari qanday burchak hosil qiladi?",
+    "options": ["90°", "180°", "270°", "360°"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Agar aylananing radiusi 7 sm bo‘lsa, uning yuzini toping. (π ning qiymati 3.14 sifatida foydalaning).",
+    "options": ["153.86 sm²", "140 sm²", "153 sm²", "140.72 sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar ikkita to‘g‘ri chiziq kesishsa va ularning orasidagi burchak 45° bo‘lsa, qancha burchak hosil bo‘ladi?",
+    "options": ["1", "3", "2", "4"],
+    "answerIndex": 2
+  },
+  {
+    "question": "Agar to‘g‘ri burchakli to‘rtburchakning uzunligi 14 sm, eni esa 7 sm bo‘lsa, uning perimetrini toping.",
+    "options": ["28 sm", "42 sm", "36 sm", "34 sm"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Agar to‘g‘ri burchakli to‘rtburchakning uzunligi 12 sm, eni esa 9 sm bo‘lsa, uning yuzini toping.",
+    "options": ["100 sm²", "118 sm²", "108 sm²", "130 sm²"],
+    "answerIndex": 2
+  },
+  {
+    "question": "7 sonini kvadratga ko‘paytiring",
+    "options": ["35", "64", "56", "49"],
+    "answerIndex": 3
+  },
+  {
+    "question": "8 tomonli to‘g‘ri ko‘pburchakda qancha diaqonali bor?",
+    "options": ["12", "14", "20", "21"],
+    "answerIndex": 0
+  },
+  {
+    "question": "-5 va 5 orasida qancha butun sonlar bor?",
+    "options": ["15", "9", "8", "7"],
+    "answerIndex": 1
+  }
+]

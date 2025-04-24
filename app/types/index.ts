@@ -8,7 +8,7 @@ export interface UserInfo {
 export interface Question {
   text: string;
   options: string[];
-  correctAnswer: number;
+  answerIndex: number;
 }
 
 export interface TestInfo {

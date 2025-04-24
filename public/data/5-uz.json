@@ -1,0 +1,77 @@
+[
+  {
+    "question": "134 + 257 nechaga teng?",
+    "options": ["381", "391", "401", "411"],
+    "answerIndex": 1
+  },
+  {
+    "question": "72 ni 4 marta oshiring.",
+    "options": ["288", "274", "292", "298"],
+    "answerIndex": 0
+  },
+  {
+    "question": "652 - 389 farqini toping.",
+    "options": ["253", "263", "273", "283"],
+    "answerIndex": 0
+  },
+  {
+    "question": "640 ni 8 ga bo‘ling.",
+    "options": ["78", "80", "82", "85"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Agar kvadratning tomoni 7 sm bo‘lsa, uning perimetri nechaga teng?",
+    "options": ["24 sm", "28 sm", "30 sm", "32 sm"],
+    "answerIndex": 1
+  },
+  {
+    "question": "6 sm va 3 sm tomonlari bo‘lgan to‘rtburchakning yuzasini toping.",
+    "options": ["18 sm²", "20 sm²", "22 sm²", "24 sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "3 soatda nechta daqiqa bor?",
+    "options": ["180", "170", "190", "200"],
+    "answerIndex": 0
+  },
+  {
+    "question": "200 ning 50% ni toping.",
+    "options": ["80", "90", "100", "110"],
+    "answerIndex": 2
+  },
+  {
+    "question": "100 dan 3/5 ning necha foizini toping?",
+    "options": ["60", "70", "80", "90"],
+    "answerIndex": 0
+  },
+  {
+    "question": "To‘g‘ri burchakli burchak necha gradus?",
+    "options": ["180°", "90°", "45°", "60°"],
+    "answerIndex": 1
+  },
+  {
+    "question": "4/5 va 3/5 sonlarini solishtiring. Qaysi biri kattaroq?",
+    "options": ["4/5", "3/5", "Teng", "Solishtirish mumkin emas"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Kubda nechta qirra bor?",
+    "options": ["8", "10", "12", "6"],
+    "answerIndex": 2
+  },
+  {
+    "question": "2 minutda nechta soniya bor?",
+    "options": ["60", "90", "120", "100"],
+    "answerIndex": 2
+  },
+  {
+    "question": "To‘rtburchakning nechta tomoni bor?",
+    "options": ["4", "6", "8", "2"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Uchburchakning burchaklari yig‘indisini toping.",
+    "options": ["180°", "360°", "270°", "90°"],
+    "answerIndex": 0
+  }
+]

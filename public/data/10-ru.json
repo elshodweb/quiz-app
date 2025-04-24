@@ -1,0 +1,57 @@
+[
+  {
+    "question": "ax^2 + bx + c = 0 kvadrat tenglamasining diskriminanti qancha?",
+    "options": ["b^2 - 4ac", "4ac - b^2", "2b - 4a", "a^2 + b^2"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar log_2(x) = 5, x ning qiymati nima?",
+    "options": ["10", "25", "32", "20"],
+    "answerIndex": 2
+  },
+  {
+    "question": "f(x) = 3x^3 - 5x + 2 funksiyasining hosilasini toping.",
+    "options": ["9x^2 - 5", "3x^2 - 5", "6x^2 - 5", "3x^2 + 5"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Asos uzunligi 10 sm va balandligi 5 sm bo'lgan uchburchakning maydoni qancha?",
+    "options": ["25 sm²", "50 sm²", "20 sm²", "15 sm²"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Agar ikki vektor orasidagi skalyar ko'paytma 0 bo'lsa, ularning o'rtasidagi burchak qancha?",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Tenglamani yeching: 2(x−3)=4(x+1).",
+    "options": ["-1", "1", "2", "0"],
+    "answerIndex": 0
+  },
+  {
+    "question": "Quyidagi grafiklardan qaysi biri y = -x^2 + 4 funksiyasiga to'g'ri keladi?",
+    "options": [
+      "Yuqoriga ochilgan",
+      "Pastga ochilgan",
+      "To'g'ri chiziq",
+      "Parabola"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "f(x) = -2x^2 + 8x - 3 funksiyasining eng katta qiymatini toping.",
+    "options": ["7", "8", "9", "10"],
+    "answerIndex": 0
+  },
+  {
+    "question": "x^2 - 4 = 0 tenglamasining qaysi ko'paytuvchisi ildiz?",
+    "options": ["2", "3", "-2", "A va C"],
+    "answerIndex": 3
+  },
+  {
+    "question": "Agar f(x) = 2x + 3 bo'lsa, f(-1) ning qiymati qancha?",
+    "options": ["1", "0", "-1", "-5"],
+    "answerIndex": 0
+  }
+]

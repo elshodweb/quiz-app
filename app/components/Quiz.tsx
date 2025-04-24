@@ -1,151 +1,162 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { Question } from "../types";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { UserInfo } from "../types";
+import Header from "./Header";
 
-interface Props {
-  questions: Question[];
-  onComplete: (score: number) => void;
+interface Question {
+  question: string;
+  options: string[];
+  answerIndex: number;
 }
 
-export default function Quiz({ questions, onComplete }: Props) {
+interface QuizProps {
+  userInfo: UserInfo;
+}
+
+export default function Quiz({ userInfo }: QuizProps) {
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
-  const [timeLeft, setTimeLeft] = useState(1800); // 30 minutes in seconds
-  const [isTimeUp, setIsTimeUp] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [score, setScore] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Calculate score
-  const calculateScore = useCallback(() => {
-    return selectedAnswers.reduce((acc, answer, index) => {
-      return acc + (answer === questions[index].correctAnswer ? 1 : 0);
-    }, 0);
-  }, [selectedAnswers, questions]);
-
-  // Handle timer
   useEffect(() => {
-    if (timeLeft <= 0) {
-      setIsTimeUp(true);
-      onComplete(calculateScore());
-      return;
+    const loadQuestions = async () => {
+      try {
+        setIsLoading(true);
+        const fileName = `${userInfo.grade}-${userInfo.language}.json`;
+        const response = await fetch(`/data/${fileName}`);
+        if (!response.ok) {
+          throw new Error(`Failed to load questions from ${fileName}`);
+        }
+        const data = await response.json();
+        setQuestions(data);
+      } catch (error) {
+        console.error("Error loading questions:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (userInfo.grade && userInfo.language) {
+      loadQuestions();
     }
+  }, [userInfo.grade, userInfo.language]);
 
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [timeLeft, onComplete, calculateScore]);
-
-  const handleAnswer = (answerIndex: number) => {
-    if (isTimeUp) return;
-
-    const newAnswers = [...selectedAnswers];
-    newAnswers[currentQuestion] = answerIndex;
-    setSelectedAnswers(newAnswers);
+  const handleAnswerSelect = (index: number) => {
+    setSelectedAnswer(index);
   };
 
   const handleNext = () => {
-    if (isTimeUp) return;
+    if (selectedAnswer === questions[currentQuestion].answerIndex) {
+      setScore(score + 1);
+    }
 
-    if (currentQuestion === questions.length - 1) {
-      onComplete(calculateScore());
-    } else {
+    if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer(null);
+    } else {
+      setShowResults(true);
     }
   };
 
-  // Format time as MM:SS
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
-  };
-
-  return (
-    <div className="p-4 max-w-md mx-auto">
-      <div className="mb-4 rounded-lg overflow-hidden">
-        <Image
-          src="/ads/ad.png"
-          alt="Advertisement"
-          width={800}
-          height={200}
-          className="w-full h-auto object-cover"
-        />
-      </div>
-
-      <div className="bg-[#00A19B] bg-opacity-10 p-4 rounded-lg mb-4">
-        <div className="flex justify-between items-center">
-          <div
-            className={`px-4 py-1 rounded ${
-              timeLeft <= 300 ? "bg-red-500" : "bg-[#00A19B]"
-            } text-white`}
-          >
-            {formatTime(timeLeft)}
-          </div>
-          <div className="text-[#00A19B]">
-            {currentQuestion + 1}/{questions.length}
-          </div>
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00A19B] mx-auto mb-4"></div>
+          <p className="text-[#00A19B]">
+            {userInfo.language === "uz"
+              ? "Savollar yuklanmoqda..."
+              : "Загрузка вопросов..."}
+          </p>
         </div>
       </div>
+    );
+  }
 
-      <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-        <p className="text-gray-800 mb-4">{questions[currentQuestion].text}</p>
-
-        <div className="space-y-3">
-          {questions[currentQuestion].options.map((option, index) => (
-            <label
-              key={index}
-              className={`flex items-center space-x-3 p-3 border rounded-lg cursor-pointer 
-                ${
-                  selectedAnswers[currentQuestion] === index
-                    ? "bg-[#00A19B] bg-opacity-10 border-[#00A19B]"
-                    : "hover:bg-gray-50"
-                }
-                ${isTimeUp ? "cursor-not-allowed opacity-60" : ""}`}
-            >
-              <input
-                type="radio"
-                name="answer"
-                checked={selectedAnswers[currentQuestion] === index}
-                onChange={() => handleAnswer(index)}
-                disabled={isTimeUp}
-                className="w-4 h-4 text-[#00A19B]"
-              />
-              <span className="text-gray-700">{option}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex gap-4">
-        <button
-          onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}
-          disabled={currentQuestion === 0 || isTimeUp}
-          className="w-1/2 py-3 gradient-btn disabled:opacity-50"
-        >
-          Назад
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={selectedAnswers[currentQuestion] === undefined || isTimeUp}
-          className="w-1/2 py-3 gradient-btn disabled:opacity-50"
-        >
-          {currentQuestion === questions.length - 1 ? "Завершить" : "Далее"}
-        </button>
-      </div>
-
-      {isTimeUp && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg text-center">
-            <h2 className="text-xl font-bold mb-4">Время вышло!</h2>
-            <p className="mb-4">Ваш тест был автоматически завершен</p>
-            <p className="text-[#00A19B]">
-              Результат: {calculateScore()} из {questions.length}
+  if (showResults) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+          <Header />
+          <h2 className="text-2xl font-bold text-center text-[#00A19B] mb-6">
+            {userInfo.language === "uz"
+              ? "Test natijalari"
+              : "Результаты теста"}
+          </h2>
+          <div className="text-center">
+            <p className="text-lg mb-4">
+              {userInfo.language === "uz"
+                ? `Sizning natijangiz: ${score} / ${questions.length}`
+                : `Ваш результат: ${score} / ${questions.length}`}
+            </p>
+            <p className="text-sm text-gray-600">
+              {userInfo.language === "uz"
+                ? `To'g'ri javoblar: ${score}`
+                : `Правильные ответы: ${score}`}
             </p>
           </div>
         </div>
-      )}
+      </div>
+    );
+  }
+
+  const currentQ = questions[currentQuestion];
+
+  return (
+    <div className="min-h-screen p-4">
+      <div className="max-w-2xl mx-auto">
+        <Header />
+
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+          <div className="mb-4">
+            <span className="text-sm text-gray-500">
+              {userInfo.language === "uz"
+                ? `Savol ${currentQuestion + 1} / ${questions.length}`
+                : `Вопрос ${currentQuestion + 1} / ${questions.length}`}
+            </span>
+          </div>
+
+          <h2 className="text-xl mb-6">{currentQ.question}</h2>
+
+          <div className="space-y-3">
+            {currentQ.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswerSelect(index)}
+                className={`w-full p-4 text-left rounded-lg border transition-all ${
+                  selectedAnswer === index
+                    ? "border-[#00A19B] bg-[#00A19B] bg-opacity-10"
+                    : "border-gray-200 hover:border-[#00A19B] hover:bg-[#00A19B] hover:bg-opacity-5"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <button
+          onClick={handleNext}
+          disabled={selectedAnswer === null}
+          className={`w-full py-4 rounded-lg transition-all ${
+            selectedAnswer === null
+              ? "bg-gray-300 cursor-not-allowed"
+              : "bg-[#00A19B] text-white hover:bg-[#008F8A]"
+          }`}
+        >
+          {currentQuestion === questions.length - 1
+            ? userInfo.language === "uz"
+              ? "Yakunlash"
+              : "Завершить"
+            : userInfo.language === "uz"
+            ? "Keyingi"
+            : "Следующий"}
+        </button>
+      </div>
     </div>
   );
 }
